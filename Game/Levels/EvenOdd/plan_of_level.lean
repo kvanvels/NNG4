@@ -7,7 +7,7 @@
 
 import Game.MyNat.Even
 import Game.MyNat.Odd
-
+import Game.Levels.AdvMultiplication
 
 namespace MyNat
 
@@ -114,9 +114,6 @@ theorem isEven_succ_iff (a : ℕ) : IsEven (succ a) ↔ IsOdd a := by
   rw [←hw,succ_eq_add_one]
   simp_add
 
-
-
-
 -- Boss level comes in two parts: we have to prove that every number
 -- is exactly one of even and odd!
 
@@ -153,7 +150,6 @@ theorem T0 (n : ℕ) : IsEven n ↔ ¬IsOdd n := by
   rw [hk,not_not]
   rfl
 
-
 instance decIsOdd : DecidablePred IsOdd
 | 0 => isFalse <| by
   exact not_isOdd_zero
@@ -180,8 +176,74 @@ instance decIsEven : DecidablePred IsEven
     simp
     exact Or.resolve_left (isEven_or_isOdd j)  h
 
+-- level 13
+theorem isOdd_mul_isOdd {a b : ℕ} (ha : IsOdd a) (hb : IsOdd b)
+    : IsOdd (a * b) := by
+  rcases ha with ⟨a2,ha2⟩
+  rcases hb with ⟨b2,hb2⟩
+  use (a2 + b2 +  a2 * b2 + a2 * b2)
+  rw [←ha2,←hb2]
+  rw [mul_add,mul_add,mul_one,add_mul]
+  rw [one_mul]
+  rw [add_mul]
+  simp_add
+
+theorem isEven_mul_of_isEven_left {a b : ℕ} (ha : IsEven a)
+    : IsEven (a * b) := by
+  rcases ha with ⟨a2,ha2⟩
+  rw [←ha2]
+  use (a2 * b)
+  rw [add_mul]
+  rfl
+
+theorem isEven_mul_of_isEven_right {a b : ℕ} (hb : IsEven b)
+    : IsEven (a * b) := by
+  rcases hb with ⟨b2,hb2⟩
+  rw [←hb2]
+  use (a * b2)
+  rw [mul_add]
+  rfl
+
+theorem mul_isOdd_iff {a b : ℕ} : IsOdd (a * b) ↔ IsOdd a ∧ IsOdd b := by
+  apply Iff.intro
+  intro h0
+  rcases (isEven_or_isOdd a) with (h|h)
+  have h1 : IsEven (a * b) := isEven_mul_of_isEven_left h
+  have h2 := not_isEven_and_isOdd (a * b)
+  exfalso
+  exact h2 ⟨h1,h0⟩
+  rcases (isEven_or_isOdd b) with (h1|h1)
+  exfalso
+  have h2 : IsEven (a * b) := isEven_mul_of_isEven_right h1
+  have h3 := not_isEven_and_isOdd (a * b)
+  exact h3 ⟨h2,h0⟩
+  apply And.intro h h1
+  intro h0
+  exact isOdd_mul_isOdd h0.left h0.right
+
+theorem mul_isEveniff {a b : ℕ} : IsEven (a * b) ↔ IsEven a ∨ IsEven b := by
+  apply Iff.intro
+  intro h0
+  rcases (isEven_or_isOdd a) with (ha|ha)
+  left
+  exact ha
+  rcases (isEven_or_isOdd b) with (hb|hb)
+  right
+  exact hb
+  exfalso
+  have h1 : IsOdd a ∧ IsOdd b :=  ⟨ha,hb⟩
+  rw [←mul_isOdd_iff] at h1
+  have h2 := not_isEven_and_isOdd (a * b)
+  apply h2
+  apply And.intro h0 h1
+  rintro (ha|hb)
+  exact (isEven_mul_of_isEven_left ha)
+  exact (isEven_mul_of_isEven_right hb)
+
+#print mul_isEveniff
 
 /-
+
 
 
 
@@ -190,6 +252,7 @@ tedious levels e.g.
 
 IsOdd_mul_IsOdd,
 `IsEven a → IsEven (a * b)` etc
+
 -/
 
 end MyNat
