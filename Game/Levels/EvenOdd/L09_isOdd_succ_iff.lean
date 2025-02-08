@@ -15,7 +15,8 @@ and only iff the original number is even."
 -/
 TheoremDoc MyNat.isOdd_succ_iff as "isOdd_succ_iff" in "EvenOdd"
 
-/-- STATEMENT DOCUMENTATION -/
+/-- A proof that that the successor of `a` is odd is equivalent to a
+proof that `a` is even -/
 @[simp]
 Statement isOdd_succ_iff (a : ℕ) : IsOdd (succ a) ↔ IsEven a := by
   apply Iff.intro
@@ -32,6 +33,6 @@ Statement isOdd_succ_iff (a : ℕ) : IsOdd (succ a) ↔ IsEven a := by
 
 
 Conclusion"We have notified the simplifier about this theorem so it
-will perform these simplifications for you."
+will perform this simplifications for you."
 
 end MyNat

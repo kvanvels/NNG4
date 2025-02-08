@@ -16,7 +16,8 @@ level, so you are encouraged to reuse that proof."
 -/
 TheoremDoc MyNat.isOdd_add_isEven as "isOdd_add_isEven" in "EvenOdd"
 
-/-- STATEMENT DOCUMENTATION -/
+/-- If we have a proof that `a` is odd and a proof that `b` is
+odd, then `a + b` is odd.-/
 Statement isOdd_add_isEven {a b : ℕ} (ha : IsOdd a) (hb : IsEven b)
     : IsOdd (a + b) := by
   have h1 :=  isEven_add_isOdd hb ha

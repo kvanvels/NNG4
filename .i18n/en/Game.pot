@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Fri Feb  7 15:52:38 2025\n"
+"POT-Creation-Date: Fri Feb  7 19:06:20 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -3472,7 +3472,8 @@ msgid "`isEven n` is a proof that `∃ (t : ℕ), t + t = n.\n"
 msgstr ""
 
 #: Game.Levels.EvenOdd.L01_isEven_zero
-msgid "In this level we show that zero is even"
+msgid "In this level we show that zero is even.  A number `n` is even\n"
+"if there exists a `t :ℕ` such that `t + t = n`."
 msgstr ""
 
 #: Game.Levels.EvenOdd.L01_isEven_zero
@@ -3480,7 +3481,7 @@ msgid "`isEven_zero` is a proof of that zero is even."
 msgstr ""
 
 #: Game.Levels.EvenOdd.L01_isEven_zero
-msgid "STATEMENT DOCUMENTATION"
+msgid "Zero is Even"
 msgstr ""
 
 #: Game.Levels.EvenOdd.L01_isEven_zero

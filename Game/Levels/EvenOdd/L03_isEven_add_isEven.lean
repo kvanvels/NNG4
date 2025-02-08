@@ -13,7 +13,7 @@ Introduction"In this level we show that sum of two even numbers is even."
 -/
 TheoremDoc MyNat.isEven_add_isEven as "isEven_add_isEven" in "EvenOdd"
 
-/-- STATEMENT DOCUMENTATION -/
+/-- The sum of two even numbers is even. -/
 Statement isEven_add_isEven (a b : ℕ) (ha : IsEven a) (hb : IsEven b)
     : IsEven (a + b) := by
   rcases ha with ⟨a2,ha2⟩

@@ -14,7 +14,8 @@ and an odd number is odd."
 `IsOdd (a + b)`.-/
 TheoremDoc MyNat.isEven_add_isOdd as "isEven_add_isOdd" in "EvenOdd"
 
-/-- STATEMENT DOCUMENTATION -/
+/-- If we have a proof that `a` is even and a proof that `b` is odd, then
+`a + b` is odd. -/
 Statement isEven_add_isOdd {a b : ℕ} (ha : IsEven a) (hb : IsOdd b)
     : IsOdd (a + b) := by
   rcases ha with ⟨a2,ha2⟩

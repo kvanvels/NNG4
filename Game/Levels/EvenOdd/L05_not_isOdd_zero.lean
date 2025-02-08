@@ -14,10 +14,12 @@ Introduction"In this level we show that zero is not odd."
 -/
 TheoremDoc MyNat.not_isOdd_zero as "not_isOdd_zero" in "EvenOdd"
 
-/-- STATEMENT DOCUMENTATION -/
+/-- Zero is not odd. -/
 Statement not_isOdd_zero : ¬ IsOdd 0 := by
   rintro ⟨w,hw⟩
+  Hint "Can you transform {hw} into `succ ({w}  +{w}) = 0`?"
   rw [←succ_eq_add_one] at hw
+  Hint "Why is {hw} impossible?"
   have h1 := succ_ne_zero (w + w)
   exact h1 hw
 

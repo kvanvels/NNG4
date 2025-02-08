@@ -13,7 +13,7 @@ Introduction"In this level we show that two is even."
 -/
 TheoremDoc MyNat.isEven_two as "isEven_two" in "EvenOdd"
 
-/-- STATEMENT DOCUMENTATION -/
+/--Two is even.-/
 Statement isEven_two : IsEven 2 := by
   use 1
   decide

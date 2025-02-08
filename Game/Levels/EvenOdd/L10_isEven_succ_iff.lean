@@ -15,7 +15,9 @@ partner to the previous level."
 -/
 TheoremDoc MyNat.isEven_succ_iff as "isEven_succ" in "EvenOdd"
 
-/-- STATEMENT DOCUMENTATION -/
+/-- A proof that the successor to a number `a` is even is
+equivalent to a proof that `a` is odd.
+-/
 @[simp]
 Statement isEven_succ_iff (a : ℕ) : IsEven (succ a) ↔ IsOdd a := by
   apply Iff.intro

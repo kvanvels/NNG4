@@ -22,7 +22,7 @@ Introduction"In this level we"
 -/
 TheoremDoc MyNat.isOdd_one as "isOdd_one" in "EvenOdd"
 
-/-- STATEMENT DOCUMENTATION -/
+/-- One is odd. -/
 theorem isOdd_one : IsOdd 1 := by
   use 0
   decide

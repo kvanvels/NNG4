@@ -13,7 +13,8 @@ Introduction"In this level we show that sum of two odd numbers is even"
 `isEven (a + b)`-/
 TheoremDoc MyNat.isOdd_add_isOdd as "isOdd_add_isOdd" in "EvenOdd"
 
-/-- STATEMENT DOCUMENTATION -/
+/-- If we have a proof that `a` is odd and a proof that `b` is odd, then
+`a + b` is odd. -/
 Statement isOdd_add_isOdd {a b : ℕ} (ha : IsOdd a) (hb : IsOdd b)
     : IsEven (a + b) := by
   rcases ha with ⟨a2,ha2⟩

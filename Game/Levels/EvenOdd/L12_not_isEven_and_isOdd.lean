@@ -13,7 +13,8 @@ Introduction"In this level we show that no number is both even and odd."
 -/
 TheoremDoc MyNat.not_isEven_and_isOdd as "not_isEven_and_isOdd" in "EvenOdd"
 
-/-- STATEMENT DOCUMENTATION -/
+/-- For every number `n`, it is not the cases that `n` is even and `n` is odd.
+-/
 Statement not_isEven_and_isOdd (n : ℕ) : ¬ (IsEven n ∧ IsOdd n) := by
   induction n with k hk
   intro h0

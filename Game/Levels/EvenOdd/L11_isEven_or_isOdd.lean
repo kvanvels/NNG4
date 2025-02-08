@@ -14,6 +14,9 @@ odd."
 -/
 TheoremDoc MyNat.isEven_or_isOdd as "isEven_or_isOdd" in "EvenOdd"
 
+/--
+For every number `n`, `n` is even or `n` is odd.
+-/
 Statement isEven_or_isOdd (n : ℕ) : IsEven n ∨ IsOdd n := by
   induction n with k hk
   left
