@@ -240,12 +240,8 @@ theorem mul_isEveniff {a b : ℕ} : IsEven (a * b) ↔ IsEven a ∨ IsEven b := 
   exact (isEven_mul_of_isEven_left ha)
   exact (isEven_mul_of_isEven_right hb)
 
-#print mul_isEveniff
 
 /-
-
-
-
 
 After multiplication world (which we never used here) there are more
 tedious levels e.g.
