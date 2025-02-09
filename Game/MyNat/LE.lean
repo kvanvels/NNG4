@@ -1,4 +1,10 @@
-import Game.MyNat.Multiplication
+import Game.MyNat.PeanoAxioms
+import Game.MyNat.Addition
+import Game.Levels.Implication
+import Game.Tactic.Decide
+import Game.Levels.Algorithm
+
+
 
 namespace MyNat
 
@@ -15,7 +21,30 @@ def le (a b : ℕ) :=  ∃ (c : ℕ), b = a + c
 -- notation
 instance : LE MyNat := ⟨MyNat.le⟩
 
--- We don't use this any more; I tell the users `≤` is *notation*
--- theorem le_iff_exists_add (a b : ℕ) : a ≤ b ↔ ∃ (c : ℕ), b = a + c := Iff.rfl
+instance leDec : DecidableRel ((· ≤ ·) : ℕ  → ℕ → Prop) 
+| 0, l => isTrue <| by
+  use l
+  rw [zero_add l]
+  rfl
+| succ j, 0 => isFalse <| by
+  rintro ⟨n,hn⟩
+  rw [succ_add] at hn
+  have h1 := zero_ne_succ (j + n)
+  exact h1 hn
+| succ j, succ k =>
+  match leDec j k with
+  | isTrue (h : j ≤ k) => isTrue <| by
+    cases h with θ hθ
+    use θ
+    rw [succ_add,hθ]
+    rfl
+  | isFalse (h : ¬(j ≤ k) ) => isFalse <| by
+    intro ⟨θ,hθ⟩
+    apply h
+    use θ
+    rw [succ_add] at hθ
+    have h1 := succ_inj k (j + θ) hθ
+    exact h1
+
 
 end MyNat
