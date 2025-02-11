@@ -15,14 +15,18 @@ Introduction"In this level we show that zero is not odd."
 TheoremDoc MyNat.not_isOdd_zero as "not_isOdd_zero" in "EvenOdd"
 
 /-- Zero is not odd. -/
-Statement not_isOdd_zero : ¬ IsOdd 0 := by
-  rintro ⟨w,hw⟩
-  Hint "Can you transform {hw} into `succ ({w}  +{w}) = 0`?"
+Statement not_isOdd_zero :  ¬(isOdd 0) := by
+  intro h
+  cases h with w hw
   rw [←succ_eq_add_one] at hw
-  Hint "Why is {hw} impossible?"
   have h1 := succ_ne_zero (w + w)
   exact h1 hw
 
-Conclusion"CONCLUSION"
+
+
+Conclusion"Nice.  The next three levels are similar to
+`isEven_add_isEven`.  Your task in the next level is to show that sum
+of two odd number is even."
+
 
 end MyNat

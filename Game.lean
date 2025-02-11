@@ -11,13 +11,17 @@ import Game.Levels.Power
 import Game.Levels.Implication
 import Game.Levels.AdvAddition
 import Game.Levels.LessOrEqual
-import Game.Levels.AdvMultiplication
 import Game.Levels.EvenOdd
---import Game.Levels.EvenOdd
+import Game.Levels.AdvMultiplication
+
+import Game.Levels.AdvEvenOdd
+
 --import Game.Levels.Prime
 --import Game.Levels.StrongInduction
 --import Game.Levels.Hard
+
 import Game.Levels.Algorithm
+
 import I18n
 
 -- Here's what we'll put on the title screen
@@ -100,9 +104,11 @@ Alternatively, if you experience issues / bugs you can also open github issues:
 
 "
 
--- Dependency Implication → Power -- `Power` uses `≠` which is introduced in `Implication`
+Dependency EvenOdd → AdvEvenOdd -- Adv needs to depend on prior
+
 
 /-! Information to be displayed on the servers landing page. -/
+
 Languages "en" "zh"
 CaptionShort "The classical introduction game for Lean."
 CaptionLong "In this game you recreate the natural numbers $\\mathbb{N}$ from the Peano axioms,

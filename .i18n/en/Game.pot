@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Fri Feb  7 19:06:20 2025\n"
+"POT-Creation-Date: Mon Feb 10 22:20:43 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -3091,6 +3091,367 @@ msgid "In this world we define `a ≤ b` and prove standard facts\n"
 "Click on \"Start\" to proceed."
 msgstr ""
 
+#: Game.Levels.EvenOdd.L01_isEven_zero
+msgid "Zero is Even"
+msgstr ""
+
+#: Game.Levels.EvenOdd.L01_isEven_zero
+msgid "`IsEven n` is a proof that `∃ (t : ℕ), t + t = n.\n"
+"This means that if you have a goal of the form `isEven n`, you can make\n"
+"progress with the `use` tactic, and if you have a hypothesis `h : isEven a`,\n"
+"you can make progress with with `cases h with t ht`."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L01_isEven_zero
+msgid "In this level we show that we define `isEven`, a\n"
+"predicate on the natural numbers, and then prove `isEven 0`.\n"
+"\n"
+"For a natural number `n` we have `isEven n`,\n"
+"if (and only if) there exists a `t : ℕ` such that `t + t = n`.\n"
+"\n"
+"So if `isEven n` is the goal, you will need to employ a `use` tactic\n"
+"and supply the correct `t`.  Alternatively, if you have a hypothesis\n"
+"`h1 : isEven n`, then you can employ the `cases` tactic as `cases h1 with t\n"
+"ht`, to split the hypothesis into its parts.\n"
+"\n"
+"Your first task is to show that zero is even"
+msgstr ""
+
+#: Game.Levels.EvenOdd.L01_isEven_zero
+msgid "`isEven_zero` is a proof of that zero is even."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L01_isEven_zero
+msgid "Zero is even."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L01_isEven_zero
+msgid "0 is even because `t + t = 0`, for `t = 0`.\n"
+"So you should write `use 0`."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L01_isEven_zero
+msgid "My proof:\n"
+"```\n"
+"use 0\n"
+"simp\n"
+"```\n"
+"Your next task is to show that two is even.  Click\n"
+"\"Next \" to continue."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L02_isEven_two
+msgid "Two is Even"
+msgstr ""
+
+#: Game.Levels.EvenOdd.L02_isEven_two
+msgid "In this level we show that two is even."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L02_isEven_two
+msgid "`isEven_two` is a proof of that `isEven 2`."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L02_isEven_two
+msgid "Two is even."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L02_isEven_two
+msgid "My Proof:\n"
+"```\n"
+"use 1\n"
+"decide\n"
+"```"
+msgstr ""
+
+#: Game.Levels.EvenOdd.L03_isEven_add_isEven
+msgid "The sum of two even numbers is even"
+msgstr ""
+
+#: Game.Levels.EvenOdd.L03_isEven_add_isEven
+msgid "In this level we show that sum of two even numbers is even."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L03_isEven_add_isEven
+msgid "`isEven_add_isEven (a b : ℕ) (ha : IsEven a) (hb : IsEven b)` is a proof for `isEven (a + b)`\""
+msgstr ""
+
+#: Game.Levels.EvenOdd.L03_isEven_add_isEven
+msgid "The sum of two even numbers is even."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L03_isEven_add_isEven
+msgid "Nice! My Proof:\n"
+"```\n"
+"  cases ha with a2 ha2\n"
+"  cases hb with b2 hb2\n"
+"  use (a2 + b2)\n"
+"  rw [←ha2,←hb2]\n"
+"  simp_add\n"
+"```\n"
+"Next we introduce the partner of `isEven`, namely\n"
+"`isOdd`.  Click \"Next\" to continue."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L04_isOdd_one
+msgid "One is Odd"
+msgstr ""
+
+#: Game.Levels.EvenOdd.L04_isOdd_one
+msgid "`isOdd n` is a proof that `∃ (t : ℕ), t + t + 1 = n`.\n"
+"This means that if you have a goal of the form `isOdd n`, you can make\n"
+"progress with the `use` tactic, and if you have a hypothesis `h : isOdd a`,\n"
+"you can make progress with `cases h with t ht`."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L04_isOdd_one
+msgid "In this level we define `IsOdd`, a predicate on the natural numbers, and you will provide a proof of `IsOdd 1`.\n"
+"\n"
+"For a natural number `n`, we have `isOdd n`, if (and only if) there exists a `t : ℕ, such that `t + t + 1 = n`.\n"
+"\n"
+"So if `isOdd n` is the goal, you will need to employ a `use` tactic\n"
+"and supply the correct `t`.  Alternatively, if you have a hypothesis\n"
+"`h1 : isOdd n`, then you can employ the `cases` tactic as `cases h1\n"
+"with t ht` to split the hypothesis into its parts."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L04_isOdd_one
+msgid "`isOdd_one` is a proof of `IsOdd 1`."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L04_isOdd_one
+msgid "My proof:\n"
+"```\n"
+"use 0\n"
+"decide\n"
+"```"
+msgstr ""
+
+#: Game.Levels.EvenOdd.L05_not_isOdd_zero
+msgid "Zero is not odd"
+msgstr ""
+
+#: Game.Levels.EvenOdd.L05_not_isOdd_zero
+msgid "In this level we show that zero is not odd."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L05_not_isOdd_zero
+msgid "`not_isOdd_zero` is a proof of `¬IsOdd 0`."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L05_not_isOdd_zero
+msgid "Zero is not odd."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L05_not_isOdd_zero
+msgid "Nice.  The next three levels are similar to\n"
+"`isEven_add_isEven`.  Your task in the next level is to show that sum\n"
+"of two odd number is even."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L06_isOdd_add_isOdd
+msgid "The sum of two odd numbers is even"
+msgstr ""
+
+#: Game.Levels.EvenOdd.L06_isOdd_add_isOdd
+msgid "In this level we show that sum of two odd numbers is even"
+msgstr ""
+
+#: Game.Levels.EvenOdd.L06_isOdd_add_isOdd
+msgid "`isOdd_add_isOdd {a b : ℕ} (ha : isOdd a) (hb : isOdd b)` is a proof that\n"
+"`isEven (a + b)`"
+msgstr ""
+
+#: Game.Levels.EvenOdd.L06_isOdd_add_isOdd
+msgid "If we have a proof that `a` is odd and a proof that `b` is odd, then\n"
+"`a + b` is odd."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L06_isOdd_add_isOdd
+msgid "My Proof:\n"
+"```\n"
+"  cases ha with a2 ha2\n"
+"  cases hb with b2 hb2\n"
+"  use (a2 + b2 + 1)\n"
+"  rw [←ha2,←hb2]\n"
+"  simp_add\n"
+"```"
+msgstr ""
+
+#: Game.Levels.EvenOdd.L07_isEven_add_isOdd
+msgid "The sum of an even number and an odd number is odd."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L07_isEven_add_isOdd
+msgid "In this level we show that the sum of an even number and\n"
+"an odd number is odd.  The idea of the proof is a the same as the\n"
+"previous proof so we won't give hints here."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L07_isEven_add_isOdd
+msgid "`isEven_add_isOdd {a b :ℕ) (ha : IsEven a) (hb : isOdd b)` is a proof of\n"
+"`isOdd (a + b)`."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L07_isEven_add_isOdd
+msgid "If we have a proof that `a` is even and a proof that `b` is odd, then\n"
+"`a + b` is odd."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L07_isEven_add_isOdd
+msgid "My proof looks shockingly similar to my previous proof,\n"
+"```\n"
+"cases ha with a2 ha2\n"
+"cases hb with b2 hb2\n"
+"use (a2 + b2)\n"
+"rw [←ha2,←hb2]\n"
+"simp_add\n"
+"```"
+msgstr ""
+
+#: Game.Levels.EvenOdd.L08_isOdd_add_isEven
+msgid "The sum of an odd number and an even\n"
+"number is odd."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L08_isOdd_add_isEven
+msgid "In this level we show that the sum of an even number and\n"
+"an odd number is odd.  This should be similiar to the previous\n"
+"level, so you are encouraged to reuse that proof."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L08_isOdd_add_isEven
+msgid "`isOdd_add_isEven {a b : ℕ) (ha : isOdd a) (hb : IsEven b)`` is a proof of\n"
+"`isOdd (a + b)`."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L08_isOdd_add_isEven
+msgid "If we have a proof that `a` is odd and a proof that `b` is\n"
+"even, then `a + b` is odd."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L08_isOdd_add_isEven
+msgid "My proof:\n"
+"```\n"
+"have h1 :=  isEven_add_isOdd hb ha\n"
+"rw [add_comm] at h1\n"
+"exact h1\n"
+"```"
+msgstr ""
+
+#: Game.Levels.EvenOdd.L09_isOdd_succ_iff
+msgid "The successor to a number is odd iff the original number is even"
+msgstr ""
+
+#: Game.Levels.EvenOdd.L09_isOdd_succ_iff
+msgid "In this level we show that the successor to a number is odd if\n"
+"and only iff the original number is even."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L09_isOdd_succ_iff
+msgid "`isOdd_succ_iff n` is a proof of of `IsOdd (succ a) ↔ IsEven a`."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L09_isOdd_succ_iff
+msgid "A proof that that the successor of `a` is odd is equivalent to a\n"
+"proof that `a` is even"
+msgstr ""
+
+#: Game.Levels.EvenOdd.L09_isOdd_succ_iff
+msgid "We have notified the simplifier about this theorem so the\n"
+"`simp` tactic will perform this transformation for you in subsequent levels."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L10_isEven_succ_iff
+msgid "The successor to a number is even iff the original number is odd."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L10_isEven_succ_iff
+msgid "In this level we show that the successor to a number is\n"
+"even if and only iff the original number is odd.  This is the obvious\n"
+"partner to the previous level.  This proof is a little more involved\n"
+"than the previous level."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L10_isEven_succ_iff
+msgid "`isEven_succ_iff a` is a proof of `isEven (succ a) ↔ isOdd a`."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L10_isEven_succ_iff
+msgid "A proof that the successor to a number `a` is even is\n"
+"equivalent to a proof that `a` is odd."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L10_isEven_succ_iff
+msgid "Note that we have imformed the simplifier about this equivalence.  As such,\n"
+"the `simp` tactic will perform this transformation for you.\n"
+"\n"
+"We are ready to proceed to the boss level.  The boss level\n"
+"comes in two parts.  First you have to prove that every number is even or odd.  And then show that no number is both even and odd."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L11_isEven_or_isOdd
+msgid "Every number is either even or odd."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L11_isEven_or_isOdd
+msgid "In this level we show that every number is either even or\n"
+"odd."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L11_isEven_or_isOdd
+msgid "`isEven_or_isOdd n` is a proof of `IsEven n ∨ IsOdd n`."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L11_isEven_or_isOdd
+msgid "For every number `n`, `n` is even or `n` is odd."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L11_isEven_or_isOdd
+msgid "There is a hidden hint if you get stuck."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L11_isEven_or_isOdd
+msgid "Try induction on `n`."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L11_isEven_or_isOdd
+msgid "Congrats!  Your next task is to show that it is not\n"
+"possible for a mumber to be both even and odd"
+msgstr ""
+
+#: Game.Levels.EvenOdd.L12_not_isEven_and_isOdd
+msgid "No number is both even and odd."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L12_not_isEven_and_isOdd
+msgid "In this level we show that no number is both even and odd."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L12_not_isEven_and_isOdd
+msgid "`not_isEven_and_isOdd n` is a proof of '¬(IsEven n ∧ IsOdd n)'."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L12_not_isEven_and_isOdd
+msgid "For every number `n`, it is not the cases that `n` is even and `n` is odd."
+msgstr ""
+
+#: Game.Levels.EvenOdd.L12_not_isEven_and_isOdd
+msgid "try induction on `n`"
+msgstr ""
+
+#: Game.Levels.EvenOdd.L12_not_isEven_and_isOdd
+msgid "Congrats!"
+msgstr ""
+
+#: Game.Levels.EvenOdd
+msgid "Even Odd World"
+msgstr ""
+
+#: Game.Levels.EvenOdd
+msgid ""
+msgstr ""
+
 #: Game.Levels.AdvMultiplication.L01mul_le_mul_right
 msgid "mul_le_mul_right"
 msgstr ""
@@ -3460,277 +3821,91 @@ msgid "Advanced *Addition* World proved various implications\n"
 "This causes some unexpected extra twists."
 msgstr ""
 
-#: Game.Levels.EvenOdd.L01_isEven_zero
-msgid "Zero is Even"
-msgstr ""
-
-#: Game.Levels.EvenOdd.L01_isEven_zero
-msgid "`isEven n` is a proof that `∃ (t : ℕ), t + t = n.\n"
-"This means that if you have a goal of the form `isEven n`, you can make\n"
-"progress with the `use` tactic, and if you have a hypothesis `h : isEven a`,\n"
-"you can make progress with with `cases h with t ht`."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L01_isEven_zero
-msgid "In this level we show that zero is even.  A number `n` is even\n"
-"if there exists a `t :ℕ` such that `t + t = n`."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L01_isEven_zero
-msgid "`isEven_zero` is a proof of that zero is even."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L01_isEven_zero
-msgid "Zero is Even"
-msgstr ""
-
-#: Game.Levels.EvenOdd.L01_isEven_zero
-msgid "0 is even because `t + t = 0`, for `t = 0`.  So you should write `use 0`."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L01_isEven_zero
-msgid "Nice.  Your next task is to show that two is even.  Click \"Next \" to continue."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L02_isEven_two
+#: Game.Levels.AdvEvenOdd.L01_isEven_mul_of_isEven_left
 msgid "TITLE"
 msgstr ""
 
-#: Game.Levels.EvenOdd.L02_isEven_two
-msgid "In this level we show that two is even."
+#: Game.Levels.AdvEvenOdd.L01_isEven_mul_of_isEven_left
+msgid "In this level we show that product of an natural number and an even\n"
+"natural number is even"
 msgstr ""
 
-#: Game.Levels.EvenOdd.L02_isEven_two
-msgid "`isEven_two` is a proof of that `isEven 2`."
+#: Game.Levels.AdvEvenOdd.L01_isEven_mul_of_isEven_left
+msgid "`isEven_mul_of_isEven_left (a b : ℕ) (ha : isEven a)` is a proof\n"
+"of `isEven (a * b)`."
 msgstr ""
 
-#: Game.Levels.EvenOdd.L02_isEven_two
-msgid "STATEMENT DOCUMENTATION"
+#: Game.Levels.AdvEvenOdd.L01_isEven_mul_of_isEven_left
+msgid "The product of an even natural number and a natural number is even"
 msgstr ""
 
-#: Game.Levels.EvenOdd.L02_isEven_two
+#: Game.Levels.AdvEvenOdd.L01_isEven_mul_of_isEven_left
+msgid "My proof:\n"
+"```\n"
+"  cases ha with a2 ha2\n"
+"  rw [←ha2]\n"
+"  use (a2 * b)\n"
+"  rw [add_mul]\n"
+"  rfl\n"
+"```"
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L02_isEven_mul_of_isEven_right
+msgid "TITLE"
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L02_isEven_mul_of_isEven_right
+msgid "In this level we show that product of a natural number and an even\n"
+"natural number is even"
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L02_isEven_mul_of_isEven_right
+msgid "`isEven_mul_of_isEven_right (a b : ℕ) (hb : isEven b)` is a proof\n"
+"of `isEven (a * b)`."
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L02_isEven_mul_of_isEven_right
+msgid "The product of an even natural number and a natural number is even"
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L02_isEven_mul_of_isEven_right
+msgid "My proof:\n"
+"```\n"
+"  cases hb with b2 hb2\n"
+"  rw [←hb2]\n"
+"  use (a * b2)\n"
+"  rw [mul_add]\n"
+"  rfl\n"
+"```"
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L03_isOdd_mul_isOdd
+msgid "isOdd_mul_isOdd"
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L03_isOdd_mul_isOdd
+msgid "In this level we show that the product of two odd natural numbers is odd."
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L03_isOdd_mul_isOdd
+msgid "`isOdd_mul_isOdd (a b : ℕ) (ha : isOdd a) (hb : isOdd b)` is a proof of `isOdd (a * b)`."
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L03_isOdd_mul_isOdd
+msgid "The product of two odd natural numbers is odd"
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L03_isOdd_mul_isOdd
 msgid "CONCLUSION"
 msgstr ""
 
-#: Game.Levels.EvenOdd.L03_isEven_add_isEven
-msgid "The sum of two even numbers is even"
+#: Game.Levels.AdvEvenOdd
+msgid "Advanced Even Odd World"
 msgstr ""
 
-#: Game.Levels.EvenOdd.L03_isEven_add_isEven
-msgid "In this level we show that sum of two even numbers is even."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L03_isEven_add_isEven
-msgid "`isEven_add_isEven (a b : ℕ) (ha : IsEven a) (hb : IsEven b)` is a proof for `isEven (a + b)`\""
-msgstr ""
-
-#: Game.Levels.EvenOdd.L03_isEven_add_isEven
-msgid "STATEMENT DOCUMENTATION"
-msgstr ""
-
-#: Game.Levels.EvenOdd.L03_isEven_add_isEven
-msgid "CONCLUSION"
-msgstr ""
-
-#: Game.Levels.EvenOdd.L04_isOdd_one
-msgid "One is Odd"
-msgstr ""
-
-#: Game.Levels.EvenOdd.L04_isOdd_one
-msgid "`isOdd n` is a proof that `∃ (t : ℕ), t + t + 1 = n`.\n"
-"This means that if you have a goal of the form `isOdd n`, you can make\n"
-"progress with the `use` tactic, and if you have a hypothesis `h : isOdd a`,\n"
-"you can make progress with with `cases h with t ht`."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L04_isOdd_one
-msgid "In this level we"
-msgstr ""
-
-#: Game.Levels.EvenOdd.L04_isOdd_one
-msgid "`isOdd_one` is a proof of `IsOdd 1`."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L04_isOdd_one
-msgid "CONCLUSION"
-msgstr ""
-
-#: Game.Levels.EvenOdd.L05_not_isOdd_zero
-msgid "Zero is not odd"
-msgstr ""
-
-#: Game.Levels.EvenOdd.L05_not_isOdd_zero
-msgid "In this level we show that zero is not odd."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L05_not_isOdd_zero
-msgid "`not_isOdd_zero` is a proof of `¬IsOdd 0`."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L05_not_isOdd_zero
-msgid "STATEMENT DOCUMENTATION"
-msgstr ""
-
-#: Game.Levels.EvenOdd.L05_not_isOdd_zero
-msgid "CONCLUSION"
-msgstr ""
-
-#: Game.Levels.EvenOdd.L06_isOdd_add_isOdd
-msgid "The sum of two odd numbers is even"
-msgstr ""
-
-#: Game.Levels.EvenOdd.L06_isOdd_add_isOdd
-msgid "In this level we show that sum of two odd numbers is even"
-msgstr ""
-
-#: Game.Levels.EvenOdd.L06_isOdd_add_isOdd
-msgid "`isOdd_add_isOdd {a b : ℕ} (ha : isOdd a) (hb : isOdd b)` is a proof that\n"
-"`isEven (a + b)`"
-msgstr ""
-
-#: Game.Levels.EvenOdd.L06_isOdd_add_isOdd
-msgid "STATEMENT DOCUMENTATION"
-msgstr ""
-
-#: Game.Levels.EvenOdd.L06_isOdd_add_isOdd
-msgid "CONCLUSION"
-msgstr ""
-
-#: Game.Levels.EvenOdd.L07_isEven_add_isOdd
-msgid "The sum of an even number and an odd number is odd."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L07_isEven_add_isOdd
-msgid "In this level we show that the sum of an even number\n"
-"and an odd number is odd."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L07_isEven_add_isOdd
-msgid "`isEven_add_isOdd {a b :ℕ) (ha : IsEven a) (hb : IsOdd b)` is a proof of\n"
-"`IsOdd (a + b)`."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L07_isEven_add_isOdd
-msgid "STATEMENT DOCUMENTATION"
-msgstr ""
-
-#: Game.Levels.EvenOdd.L07_isEven_add_isOdd
-msgid "CONCLUSION"
-msgstr ""
-
-#: Game.Levels.EvenOdd.L08_isOdd_add_isEven
-msgid "The sum of an odd number and an even number is odd."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L08_isOdd_add_isEven
-msgid "In this level we show that the sum of an even number and\n"
-"an odd number is odd.  This should be shockingly similiar to the previous\n"
-"level, so you are encouraged to reuse that proof."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L08_isOdd_add_isEven
-msgid "`isOdd_add_isEven {a b : ℕ) (ha : IsOdd a) (hb : IsEven b)`` is a proof of\n"
-"`isOdd (a + b)`."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L08_isOdd_add_isEven
-msgid "STATEMENT DOCUMENTATION"
-msgstr ""
-
-#: Game.Levels.EvenOdd.L08_isOdd_add_isEven
-msgid "CONCLUSION"
-msgstr ""
-
-#: Game.Levels.EvenOdd.L09_isOdd_succ_iff
-msgid "The successor to a number is odd iff the original number is even"
-msgstr ""
-
-#: Game.Levels.EvenOdd.L09_isOdd_succ_iff
-msgid "In this level we show that the successor to a number is odd if\n"
-"and only iff the original number is even."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L09_isOdd_succ_iff
-msgid "`isOdd_succ_iff n` is a proof of of `IsOdd (succ a) ↔ IsEven a`."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L09_isOdd_succ_iff
-msgid "STATEMENT DOCUMENTATION"
-msgstr ""
-
-#: Game.Levels.EvenOdd.L09_isOdd_succ_iff
-msgid "We have notified the simplifier about this theorem so it\n"
-"will perform these simplifications for you."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L10_isEven_succ_iff
-msgid "The successor to a number is even iff the original number is odd."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L10_isEven_succ_iff
-msgid "In this level we show that the successor to a number is\n"
-"even if and only iff the original number is odd.  This is the obvious\n"
-"partner to the previous level."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L10_isEven_succ_iff
-msgid "`isEven_succ_iff a` is a proof of `IsEven (succ a) ↔ IsOdd a`."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L10_isEven_succ_iff
-msgid "STATEMENT DOCUMENTATION"
-msgstr ""
-
-#: Game.Levels.EvenOdd.L10_isEven_succ_iff
-msgid "We are ready to proceed to the boss level.  The boss level\n"
-"comes in two parts, you have to prove that every number is even or odd\n"
-"but not both."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L11_isEven_or_isOdd
-msgid "Every number is either even or odd."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L11_isEven_or_isOdd
-msgid "In this level we show that every number is either even or\n"
-"odd."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L11_isEven_or_isOdd
-msgid "`isEven_or_isOdd n` is a proof of `IsEven n ∨ IsOdd n`."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L11_isEven_or_isOdd
-msgid "Your next task is to show that it is not possible for a\n"
-"mumber to be both even and odd"
-msgstr ""
-
-#: Game.Levels.EvenOdd.L12_not_isEven_and_isOdd
-msgid "No number is both even and odd."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L12_not_isEven_and_isOdd
-msgid "In this level we show that no number is both even and odd."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L12_not_isEven_and_isOdd
-msgid "`not_isEven_and_isOdd n` is a proof of '¬(IsEven n ∧ IsOdd n)'."
-msgstr ""
-
-#: Game.Levels.EvenOdd.L12_not_isEven_and_isOdd
-msgid "STATEMENT DOCUMENTATION"
-msgstr ""
-
-#: Game.Levels.EvenOdd.L12_not_isEven_and_isOdd
-msgid "CONCLUSION"
-msgstr ""
-
-#: Game.Levels.EvenOdd
-msgid "Even Odd World"
-msgstr ""
-
-#: Game.Levels.EvenOdd
-msgid ""
+#: Game.Levels.AdvEvenOdd
+msgid "In this world you will revisit the concepts of even and\n"
+"odd now that we have multiplication defined.  Click \"Next\" to continue."
 msgstr ""
 
 #: Game

@@ -15,7 +15,8 @@ TheoremDoc MyNat.not_isEven_and_isOdd as "not_isEven_and_isOdd" in "EvenOdd"
 
 /-- For every number `n`, it is not the cases that `n` is even and `n` is odd.
 -/
-Statement not_isEven_and_isOdd (n : ℕ) : ¬ (IsEven n ∧ IsOdd n) := by
+Statement not_isEven_and_isOdd (n : ℕ) : ¬ (isEven n ∧ isOdd n) := by
+  Hint (hidden := true) "try induction on `n`"
   induction n with k hk
   intro h0
   exact not_isOdd_zero h0.right
@@ -23,6 +24,6 @@ Statement not_isEven_and_isOdd (n : ℕ) : ¬ (IsEven n ∧ IsOdd n) := by
   intro h0 h1
   exact hk (And.intro h1 h0)
 
-Conclusion"CONCLUSION"
+Conclusion"Congrats!"
 
 end MyNat

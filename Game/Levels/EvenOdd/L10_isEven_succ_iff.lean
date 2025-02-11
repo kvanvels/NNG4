@@ -8,10 +8,11 @@ namespace MyNat
 
 Introduction"In this level we show that the successor to a number is
 even if and only iff the original number is odd.  This is the obvious
-partner to the previous level."
+partner to the previous level.  This proof is a little more involved
+than the previous level.  "
 
 
-/-- `isEven_succ_iff a` is a proof of `IsEven (succ a) ↔ IsOdd a`.
+/-- `isEven_succ_iff a` is a proof of `isEven (succ a) ↔ isOdd a`.
 -/
 TheoremDoc MyNat.isEven_succ_iff as "isEven_succ" in "EvenOdd"
 
@@ -19,7 +20,7 @@ TheoremDoc MyNat.isEven_succ_iff as "isEven_succ" in "EvenOdd"
 equivalent to a proof that `a` is odd.
 -/
 @[simp]
-Statement isEven_succ_iff (a : ℕ) : IsEven (succ a) ↔ IsOdd a := by
+Statement isEven_succ_iff (a : ℕ) : isEven (succ a) ↔ isOdd a := by
   apply Iff.intro
   rw [←isOdd_succ_iff]
   intro ⟨w,hw⟩
@@ -42,8 +43,11 @@ Statement isEven_succ_iff (a : ℕ) : IsEven (succ a) ↔ IsOdd a := by
   simp_add
 
 
-Conclusion"We are ready to proceed to the boss level.  The boss level
-comes in two parts, you have to prove that every number is even or odd
-but not both."
+Conclusion"
+Note that we have imformed the simplifier about this equivalence.  As such,
+the `simp` tactic will perform this transformation for you.
+
+We are ready to proceed to the boss level.  The boss level
+comes in two parts.  First you have to prove that every number is even or odd.  And then show that no number is both even and odd."
 
 end MyNat

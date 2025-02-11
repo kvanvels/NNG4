@@ -18,7 +18,7 @@ TheoremDoc MyNat.isOdd_succ_iff as "isOdd_succ_iff" in "EvenOdd"
 /-- A proof that that the successor of `a` is odd is equivalent to a
 proof that `a` is even -/
 @[simp]
-Statement isOdd_succ_iff (a : ℕ) : IsOdd (succ a) ↔ IsEven a := by
+Statement isOdd_succ_iff (a : ℕ) : isOdd (succ a) ↔ isEven a := by
   apply Iff.intro
   rintro ⟨w,hw⟩
   rw [←succ_eq_add_one] at hw
@@ -32,7 +32,7 @@ Statement isOdd_succ_iff (a : ℕ) : IsOdd (succ a) ↔ IsEven a := by
   rfl
 
 
-Conclusion"We have notified the simplifier about this theorem so it
-will perform this simplifications for you."
+Conclusion"We have notified the simplifier about this theorem so the
+`simp` tactic will perform this transformation for you in subsequent levels."
 
 end MyNat

@@ -15,15 +15,23 @@ TheoremDoc MyNat.isOdd_add_isOdd as "isOdd_add_isOdd" in "EvenOdd"
 
 /-- If we have a proof that `a` is odd and a proof that `b` is odd, then
 `a + b` is odd. -/
-Statement isOdd_add_isOdd {a b : ℕ} (ha : IsOdd a) (hb : IsOdd b)
-    : IsEven (a + b) := by
-  rcases ha with ⟨a2,ha2⟩
-  rcases hb with ⟨b2,hb2⟩
+Statement isOdd_add_isOdd {a b : ℕ} (ha : isOdd a) (hb : isOdd b)
+    : isEven (a + b) := by
+  cases ha with a2 ha2
+  cases hb with b2 hb2
   use (a2 + b2 + 1)
   rw [←ha2,←hb2]
   simp_add
 
 
-Conclusion"CONCLUSION"
-
+Conclusion"
+My Proof:
+```
+  cases ha with a2 ha2
+  cases hb with b2 hb2
+  use (a2 + b2 + 1)
+  rw [←ha2,←hb2]
+  simp_add
+```
+"
 end MyNat
