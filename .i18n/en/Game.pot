@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Mon Feb 10 22:20:43 2025\n"
+"POT-Creation-Date: Mon Feb 10 23:15:55 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -3821,25 +3821,65 @@ msgid "Advanced *Addition* World proved various implications\n"
 "This causes some unexpected extra twists."
 msgstr ""
 
-#: Game.Levels.AdvEvenOdd.L01_isEven_mul_of_isEven_left
+#: Game.Levels.AdvEvenOdd.L01_isEven_iff
+msgid "isEven_iff'"
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L01_isEven_iff
+msgid "In this level we"
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L01_isEven_iff
+msgid "`isEven_iff'` is a proof of ``."
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L01_isEven_iff
+msgid "STATEMENT DOCUMENTATION"
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L01_isEven_iff
+msgid "CONCLUSION"
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L02_isOdd_iff
 msgid "TITLE"
 msgstr ""
 
-#: Game.Levels.AdvEvenOdd.L01_isEven_mul_of_isEven_left
+#: Game.Levels.AdvEvenOdd.L02_isOdd_iff
+msgid "In this level we"
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L02_isOdd_iff
+msgid "`isOdd_iff` is a proof of ``."
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L02_isOdd_iff
+msgid "STATEMENT DOCUMENTATION"
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L02_isOdd_iff
+msgid "CONCLUSION"
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L03_isEven_mul_of_isEven_left
+msgid "TITLE"
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L03_isEven_mul_of_isEven_left
 msgid "In this level we show that product of an natural number and an even\n"
 "natural number is even"
 msgstr ""
 
-#: Game.Levels.AdvEvenOdd.L01_isEven_mul_of_isEven_left
+#: Game.Levels.AdvEvenOdd.L03_isEven_mul_of_isEven_left
 msgid "`isEven_mul_of_isEven_left (a b : ℕ) (ha : isEven a)` is a proof\n"
 "of `isEven (a * b)`."
 msgstr ""
 
-#: Game.Levels.AdvEvenOdd.L01_isEven_mul_of_isEven_left
+#: Game.Levels.AdvEvenOdd.L03_isEven_mul_of_isEven_left
 msgid "The product of an even natural number and a natural number is even"
 msgstr ""
 
-#: Game.Levels.AdvEvenOdd.L01_isEven_mul_of_isEven_left
+#: Game.Levels.AdvEvenOdd.L03_isEven_mul_of_isEven_left
 msgid "My proof:\n"
 "```\n"
 "  cases ha with a2 ha2\n"
@@ -3850,25 +3890,25 @@ msgid "My proof:\n"
 "```"
 msgstr ""
 
-#: Game.Levels.AdvEvenOdd.L02_isEven_mul_of_isEven_right
+#: Game.Levels.AdvEvenOdd.L04_isEven_mul_of_isEven_right
 msgid "TITLE"
 msgstr ""
 
-#: Game.Levels.AdvEvenOdd.L02_isEven_mul_of_isEven_right
+#: Game.Levels.AdvEvenOdd.L04_isEven_mul_of_isEven_right
 msgid "In this level we show that product of a natural number and an even\n"
 "natural number is even"
 msgstr ""
 
-#: Game.Levels.AdvEvenOdd.L02_isEven_mul_of_isEven_right
+#: Game.Levels.AdvEvenOdd.L04_isEven_mul_of_isEven_right
 msgid "`isEven_mul_of_isEven_right (a b : ℕ) (hb : isEven b)` is a proof\n"
 "of `isEven (a * b)`."
 msgstr ""
 
-#: Game.Levels.AdvEvenOdd.L02_isEven_mul_of_isEven_right
+#: Game.Levels.AdvEvenOdd.L04_isEven_mul_of_isEven_right
 msgid "The product of an even natural number and a natural number is even"
 msgstr ""
 
-#: Game.Levels.AdvEvenOdd.L02_isEven_mul_of_isEven_right
+#: Game.Levels.AdvEvenOdd.L04_isEven_mul_of_isEven_right
 msgid "My proof:\n"
 "```\n"
 "  cases hb with b2 hb2\n"
@@ -3879,23 +3919,43 @@ msgid "My proof:\n"
 "```"
 msgstr ""
 
-#: Game.Levels.AdvEvenOdd.L03_isOdd_mul_isOdd
+#: Game.Levels.AdvEvenOdd.L05_isOdd_mul_isOdd
 msgid "isOdd_mul_isOdd"
 msgstr ""
 
-#: Game.Levels.AdvEvenOdd.L03_isOdd_mul_isOdd
+#: Game.Levels.AdvEvenOdd.L05_isOdd_mul_isOdd
 msgid "In this level we show that the product of two odd natural numbers is odd."
 msgstr ""
 
-#: Game.Levels.AdvEvenOdd.L03_isOdd_mul_isOdd
+#: Game.Levels.AdvEvenOdd.L05_isOdd_mul_isOdd
 msgid "`isOdd_mul_isOdd (a b : ℕ) (ha : isOdd a) (hb : isOdd b)` is a proof of `isOdd (a * b)`."
 msgstr ""
 
-#: Game.Levels.AdvEvenOdd.L03_isOdd_mul_isOdd
+#: Game.Levels.AdvEvenOdd.L05_isOdd_mul_isOdd
 msgid "The product of two odd natural numbers is odd"
 msgstr ""
 
-#: Game.Levels.AdvEvenOdd.L03_isOdd_mul_isOdd
+#: Game.Levels.AdvEvenOdd.L05_isOdd_mul_isOdd
+msgid "CONCLUSION"
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L06_mul_isOdd_iff
+msgid "TITLE"
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L06_mul_isOdd_iff
+msgid "In this level we"
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L06_mul_isOdd_iff
+msgid "`mul_isOdd_iff a b  ` is a proof of `isOdd (a * b) ↔ isOdd a ∧ isOdd b`."
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L06_mul_isOdd_iff
+msgid "STATEMENT DOCUMENTATION"
+msgstr ""
+
+#: Game.Levels.AdvEvenOdd.L06_mul_isOdd_iff
 msgid "CONCLUSION"
 msgstr ""
 

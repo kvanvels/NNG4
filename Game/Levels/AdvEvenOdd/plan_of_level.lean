@@ -30,6 +30,8 @@ namespace MyNat
 --     simp
 --     exact Or.resolve_left (isEven_or_isOdd j)  h
 
+
+
 -- level 1
 theorem isEven_mul_of_isEven_left {a b : ℕ} (ha : isEven a)
     : isEven (a * b) := by
@@ -52,7 +54,7 @@ theorem isEven_mul_of_isEven_right {a b : ℕ} (hb : isEven b)
 theorem isOdd_mul_isOdd {a b : ℕ} (ha : isOdd a) (hb : isOdd b)
     : isOdd (a * b) := by
   rcases ha with ⟨a2,ha2⟩
-  rcases hb with ⟨b2,hb2⟩
+  rcases hb with ⟨b2,hb2⟩  
   use (a2 + b2 +  a2 * b2 + a2 * b2)
   rw [←ha2,←hb2]
   rw [mul_add,mul_add,mul_one,add_mul]
@@ -60,6 +62,8 @@ theorem isOdd_mul_isOdd {a b : ℕ} (ha : isOdd a) (hb : isOdd b)
   rw [add_mul]
   simp_add
 
+
+--level 4
 theorem mul_isOdd_iff {a b : ℕ} : isOdd (a * b) ↔ isOdd a ∧ isOdd b := by
   apply Iff.intro
   intro h0
@@ -77,6 +81,7 @@ theorem mul_isOdd_iff {a b : ℕ} : isOdd (a * b) ↔ isOdd a ∧ isOdd b := by
   intro h0
   exact isOdd_mul_isOdd h0.left h0.right
 
+--level 5
 theorem mul_isEven_iff {a b : ℕ} : isEven (a * b) ↔ isEven a ∨ isEven b := by
   apply Iff.intro
   intro h0
@@ -96,6 +101,7 @@ theorem mul_isEven_iff {a b : ℕ} : isEven (a * b) ↔ isEven a ∨ isEven b :=
   exact (isEven_mul_of_isEven_left ha)
   exact (isEven_mul_of_isEven_right hb)
 
+--level 6
 theorem isEven_iff' (n : ℕ) : isEven n ↔ ∃ p : ℕ, 2 * p = n := by
   apply Iff.intro
   rintro ⟨w,hw⟩
@@ -109,6 +115,7 @@ theorem isEven_iff' (n : ℕ) : isEven n ↔ ∃ p : ℕ, 2 * p = n := by
   rw [one_mul] at hw
   exact hw
 
+--level 7
 theorem isOdd_iff' (n : ℕ) : isOdd n ↔ ∃ p : ℕ, 2 * p + 1 = n := by
   apply Iff.intro
   rintro ⟨w,hw⟩
@@ -120,6 +127,8 @@ theorem isOdd_iff' (n : ℕ) : isOdd n ↔ ∃ p : ℕ, 2 * p + 1 = n := by
   rw [two_eq_succ_one,succ_mul,one_mul] at hw
   exact hw
 
+
+--level 8
 theorem boss (n :ℕ ) : isEven (n * succ n) := by
   rw [mul_isEven_iff]
   cases (isEven_or_isOdd n) with hn hn
