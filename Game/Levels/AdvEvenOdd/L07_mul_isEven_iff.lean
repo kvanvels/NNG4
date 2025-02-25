@@ -7,7 +7,7 @@ Title "TITLE"
 
 namespace MyNat
 
-IntroduCtion"In this level we"
+Introduction"In this level we"
 
 
 /-- `mul_isEven_iff` is a proof of ``.
