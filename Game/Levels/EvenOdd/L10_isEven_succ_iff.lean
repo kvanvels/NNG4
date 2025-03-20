@@ -21,16 +21,15 @@ equivalent to a proof that `a` is odd.
 -/
 @[simp]
 Statement isEven_succ_iff (a : ℕ) : isEven (succ a) ↔ isOdd a := by
-  apply Iff.intro
+  constructor
   rw [←isOdd_succ_iff]
   intro ⟨w,hw⟩
   rw [←succ_eq_add_one] at hw
   have h1 := succ_inj (w + w) (succ a) hw
   cases w with l
-  exfalso
   rw [add_zero] at h1
-  have h2 := zero_ne_succ a
-  exact h2 h1
+  have h1 := zero_ne_succ a
+  tauto
   use l
   rw [succ_add] at h1
   have h3 := succ_inj (l + succ l) a h1

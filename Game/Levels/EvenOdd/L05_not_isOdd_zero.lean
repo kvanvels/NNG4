@@ -24,7 +24,7 @@ Statement not_isOdd_zero :  ¬(isOdd 0) := by
 
 
 
-Conclusion"Nice.  The next three levels are similar to
+Conclusion"Nice job.  The next three levels are similar to
 `isEven_add_isEven`.  Your task in the next level is to show that sum
 of two odd number is even."
 

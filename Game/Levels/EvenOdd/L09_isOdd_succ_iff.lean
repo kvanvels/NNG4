@@ -19,8 +19,9 @@ TheoremDoc MyNat.isOdd_succ_iff as "isOdd_succ_iff" in "EvenOdd"
 proof that `a` is even -/
 @[simp]
 Statement isOdd_succ_iff (a : ℕ) : isOdd (succ a) ↔ isEven a := by
-  apply Iff.intro
-  rintro ⟨w,hw⟩
+  constructor
+  intro hw
+  cases hw with w hw
   rw [←succ_eq_add_one] at hw
   have h1 := succ_inj (w + w) a hw
   use w
